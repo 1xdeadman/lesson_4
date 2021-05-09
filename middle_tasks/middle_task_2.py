@@ -15,7 +15,7 @@ class MyPool:
 
         :param max_size: максимальный размер пула процессов
         """
-        self.tasks: dict[str, Callable] = {}
+        self._tasks: dict[str, Callable] = {}
         self._processes: dict[str, mp.Process] = {}
         self._max_size: int = max_size
 
@@ -50,7 +50,7 @@ class MyPool:
         """
 
         # TODO: реализовать метод.
-        #  Удаляет задачу из списка, если она еще не была запущена.
+        #  Удаляет задачу из tasks, если она еще не была запущена.
         #  Уничтожает процесс задачи, если удаляемая задача уже была запущена
 
     def get_task_info(self, task_name: str) -> TaskStatus:
